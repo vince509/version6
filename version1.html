@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17161f">
+  <meta name="description" content="A local academic research workspace for the STI College Alaminos project.">
+  <title>AI-Powered Capstone Repository — STI College Alaminos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="version1.html" aria-label="Research Hub home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>research<span>hub</span></strong><small>STI COLLEGE ALAMINOS</small></span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="version1.html" aria-current="page"><span class="nav-icon">⌂</span>Discover</a>
+        <a class="nav-link library-nav-button" href="add-research.html"><span class="nav-icon">＋</span>Add research</a>
+        <a class="nav-link" href="my-library.html"><span class="nav-icon">▣</span>My library</a>
+        <a class="nav-link" href="shared-research.html"><span class="nav-icon">⇄</span>Shared research</a>
+        <a class="nav-link" href="about.html"><span class="nav-icon">✳</span>About the project</a>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note">
+        <span class="note-icon">✦</span>
+        <strong>Research, made easier.</strong>
+        <p>One place to find and explore academic work.</p>
+        <a href="about.html">Learn about the project <span>↗</span></a>
+      </div>
+      <a class="profile" href="/profile" aria-label="Open your profile">
+        <div class="avatar">S</div>
+        <div><strong>Research Hub</strong><small>Member</small></div>
+        <span class="profile-more">···</span>
+      </a>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong>Discover</strong></div>
+        <form class="global-search" action="library.html" method="get" role="search"><label class="visually-hidden" for="global-search-input">Search all research</label><input id="global-search-input" type="search" name="q" placeholder="Search research..." autocomplete="off"><button type="submit" aria-label="Search">⌕</button></form>
+        <div class="top-actions"><span class="preview-label"><i></i> LOCAL WORKSPACE</span></div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-star">✳</span> A smarter way to find research</div>
+          <h1>Good research<br>starts with <span>discovery.</span></h1>
+          <p>Explore academic work from the STI College Alaminos community. Search naturally, find related topics, and get to the research that matters.</p>
+          <div class="hero-meta"><span class="meta-avatars"><i>R</i><i>H</i><i>+</i></span><span>Made for students, faculty &amp; researchers</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✳</div>
+          <div class="art-card art-back"><span class="art-line"></span><span class="art-line short"></span><span class="art-lines"></span></div>
+          <div class="art-card art-front"><div class="art-icon">✳</div><span class="art-line"></span><span class="art-line short"></span><div class="art-pill">RESEARCH, CONNECTED</div></div>
+        </div>
+      </section>
+
+      <section class="search-panel" aria-label="Research search">
+        <div class="search-heading"><div><span class="search-symbol">⌕</span><strong>What are you researching?</strong></div><span class="ai-tag">SEARCH THE LIBRARY</span></div>
+        <form id="search-form" class="search-form">
+          <label class="visually-hidden" for="search-input">Search research by topic or question</label>
+          <input id="search-input" type="search" autocomplete="off" placeholder="Try “How can AI help students find research?”">
+          <button type="submit"><span>⌕</span> Search</button>
+        </form>
+        <div class="suggestions"><span>Try:</span><button data-query="AI research retrieval">AI research retrieval</button><button data-query="document repository">document repository</button><button data-query="student benefits">student benefits</button></div>
+      </section>
+
+      <section class="library-section" id="library">
+        <div class="section-heading">
+          <div><span class="section-kicker">YOUR STARTING POINT</span><h2>Explore the project</h2><p>Key ideas from the project documents.</p></div>
+          <a class="view-all" href="library.html">See all topics <span>→</span></a>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter project topics">
+          <button class="filter-chip selected" data-filter="all">All topics <span>05</span></button>
+          <button class="filter-chip" data-filter="search">AI &amp; retrieval</button>
+          <button class="filter-chip" data-filter="repository">Repository</button>
+          <button class="filter-chip" data-filter="impact">Project impact</button>
+        </div>
+        <div class="result-status" id="result-status" aria-live="polite"></div>
+        <div class="document-grid" id="document-grid">
+          <article class="document-card" data-category="search" data-search="ai-powered repository research retrieval chatbot natural language search related papers summaries">
+            <div class="card-top"><span class="doc-type type-violet"><span>✳</span> PROJECT CONCEPT</span><button class="bookmark" aria-label="Save AI-powered research retrieval" title="Save this topic">♡</button></div>
+            <div class="doc-illustration illustration-violet"><div class="illustration-window"><span></span><span></span><span></span><div class="illustration-search">⌕ <i></i></div><div class="illustration-bars"><i></i><i></i><i></i></div></div><span class="ill-star">✦</span></div>
+            <h3>AI-powered research retrieval</h3>
+            <p>Use natural-language questions and AI recommendations to make relevant academic work easier to find.</p>
+            <div class="card-footer"><span><i class="mini-avatar violet-bg">AI</i> Chapter 1 proposal</span><span class="read-time">4 min read <b>↗</b></span></div>
+          </article>
+
+          <article class="document-card" data-category="search" data-search="hybrid architecture java spring boot langchain4j c# asp.net core semantic kernel microservices parsing background re-indexing api routing retrieval augmented generation rag vector embeddings">
+            <div class="card-top"><span class="doc-type type-violet"><span>⌘</span> ARCHITECTURE OVERVIEW</span><button class="bookmark" aria-label="Save system architecture" title="Save this topic">♡</button></div>
+            <div class="doc-illustration illustration-violet"><div class="stack-diagram"><span>Java · document services</span><i>↕</i><span>C# · API &amp; interface</span><b>RAG + vector search</b></div><span class="ill-star">✦</span></div>
+            <h3>How the system is put together</h3>
+            <p>The manuscript outlines Java document services alongside a C# API and interface, with RAG and vector embeddings for retrieval.</p>
+            <div class="card-footer"><span><i class="mini-avatar violet-bg">CS</i> Capstone manuscript</span><span class="read-time">3 min read <b>↗</b></span></div>
+          </article>
+
+          <article class="document-card" data-category="repository" data-search="centralized digital repository academic documents research papers capstone categorized topic course department upload">
+            <div class="card-top"><span class="doc-type type-blue"><span>▤</span> SYSTEM FEATURE</span><button class="bookmark" aria-label="Save centralized repository" title="Save this topic">♡</button></div>
+            <div class="doc-illustration illustration-blue"><div class="folder-stack"><i></i><i></i><i></i><span>▤</span></div><span class="ill-dot"></span></div>
+            <h3>A home for academic work</h3>
+            <p>A centralized digital repository to organize research papers, capstones, and documents by topic or course.</p>
+            <div class="card-footer"><span><i class="mini-avatar blue-bg">RH</i> Chapter 1 proposal</span><span class="read-time">3 min read <b>↗</b></span></div>
+          </article>
+
+          <article class="document-card" data-category="impact" data-search="students faculty teachers administrator future researchers benefits efficiency access educational community">
+            <div class="card-top"><span class="doc-type type-green"><span>◎</span> PROJECT IMPACT</span><button class="bookmark" aria-label="Save project impact" title="Save this topic">♡</button></div>
+            <div class="doc-illustration illustration-green"><div class="people-graphic"><i>●</i><i>●</i><i>●</i><span>↗</span></div><div class="people-base"></div></div>
+            <h3>Built for the whole community</h3>
+            <p>Support students, faculty, administrators, developers, and future researchers with better access to knowledge.</p>
+            <div class="card-footer"><span><i class="mini-avatar green-bg">ST</i> Chapter 1 proposal</span><span class="read-time">2 min read <b>↗</b></span></div>
+          </article>
+
+          <article class="document-card" data-category="search" data-search="scope limitations security role-based access pdf docx txt internet connection performance less than three seconds usability">
+            <div class="card-top"><span class="doc-type type-orange"><span>↗</span> REQUIREMENTS</span><button class="bookmark" aria-label="Save project requirements" title="Save this topic">♡</button></div>
+            <div class="doc-illustration illustration-orange"><div class="checklist"><i>✓</i><span></span><i>✓</i><span></span><i>✓</i><span></span></div><span class="ill-check">✓</span></div>
+            <h3>Designed to be useful &amp; accessible</h3>
+            <p>Explore the proposal’s functional, performance, security, and usability requirements for the system.</p>
+            <div class="card-footer"><span><i class="mini-avatar orange-bg">RQ</i> Chapter 1 proposal</span><span class="read-time">5 min read <b>↗</b></span></div>
+          </article>
+        </div>
+        <div class="empty-state" id="empty-state" hidden><div>⌕</div><h3>No matching topics yet</h3><p>Try another phrase or clear your filters to explore the project.</p><button id="clear-search">Clear search</button></div>
+        <div class="source-note"><span>ⓘ</span> Summarized from the provided Chapter 1 and capstone manuscript. Cards are not actual repository records.</div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-icon">✳</div>
+        <div><span class="section-kicker">THE PROPOSED SYSTEM</span><h2>AI-Powered Capstone Repository &amp; Research Retrieval Chatbot</h2><p>For STI Alaminos: a searchable academic repository with AI-assisted discovery. The manuscript describes Java document services, a C# API and interface, and retrieval-augmented generation.</p></div>
+        <div class="about-stat"><strong>RAG</strong><small>Retrieval approach<br>described in manuscript</small></div>
+      </section>
+      <footer class="footer"><span>RESEARCH HUB <i>·</i> LOCAL WORKSPACE</span><span>Your saved files stay in this browser</span></footer>
+    </main>
+
+    <button class="chat-launcher" id="chat-launcher" aria-label="Open research helper"><img src="/assets/ai-chatbot-logo.png" alt=""></button>
+    <section class="chat-panel" id="chat-panel" aria-label="Research helper" hidden>
+      <div class="chat-header"><div class="chat-avatar"><img src="/assets/ai-chatbot-logo.png" alt=""></div><div><strong>Website help</strong><span><i id="ai-status-dot"></i><span id="ai-status-label">Checking Groq AI…</span></span></div><button id="chat-close" aria-label="Close website help">×</button></div>
+      <div class="chat-disclaimer">AI PRIVACY <span>Your question and up to 4 matched excerpts are sent to Groq. Avoid sensitive data.</span></div>
+      <div class="chat-messages" id="chat-messages" aria-live="polite"><div class="message assistant-message">I can help you use this Research Hub website. Ask about signing in, searching, your library, uploads, profile, or dashboards.</div></div>
+      <form class="chat-form" id="chat-form"><label class="visually-hidden" for="chat-input">Ask how to use Research Hub</label><input id="chat-input" placeholder="Ask how to use this website..." autocomplete="off"><button type="submit" aria-label="Ask about using this website">⌕</button></form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="auth-client.js"></script>
+  <script src="scriptss.js"></script>
+</body>
+</html>

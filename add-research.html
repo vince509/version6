@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17161f">
+  <meta name="description" content="Add a research file to your personal library.">
+  <title>Add Research — STI College Alaminos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="version1.html" aria-label="Research Hub home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-copy"><strong>research<span>hub</span></strong><small>STI COLLEGE ALAMINOS</small></span></a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link" href="version1.html"><span class="nav-icon">⌂</span>Discover</a>
+        <a class="nav-link library-nav-button active" href="add-research.html" aria-current="page"><span class="nav-icon">＋</span>Add research</a>
+        <a class="nav-link" href="my-library.html"><span class="nav-icon">▣</span>My library</a>
+        <a class="nav-link" href="shared-research.html"><span class="nav-icon">⇄</span>Shared research</a>
+        <a class="nav-link" href="about.html"><span class="nav-icon">✳</span>About the project</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note"><span class="note-icon">✦</span><strong>Build your collection.</strong><p>Add research files to your own personal library.</p><a href="my-library.html">View my library <span>↗</span></a></div>
+      <a class="profile" href="/profile" aria-label="Open your profile"><div class="avatar">S</div><div><strong>Research Hub</strong><small>Member</small></div><span class="profile-more">···</span></a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong>Add research</strong></div>
+        <form class="global-search" action="library.html" method="get" role="search"><label class="visually-hidden" for="global-search-input">Search all research</label><input id="global-search-input" type="search" name="q" placeholder="Search research..." autocomplete="off"><button type="submit" aria-label="Search">⌕</button></form>
+        <div class="top-actions"><span class="preview-label"><i></i> PERSONAL SPACE</span></div>
+      </header>
+
+      <section class="inner-page-heading">
+        <span class="section-kicker">GROW YOUR PERSONAL LIBRARY</span>
+        <h1>Add research</h1>
+        <p>Upload a document and add details to make it easier to find in your personal library.</p>
+      </section>
+
+      <section class="library-section repository-manager add-research-page">
+        <div class="section-heading"><div><span class="section-kicker">PRIVATE TO YOUR ACCOUNT</span><h2>Research details</h2><p>Supported formats: PDF, DOCX, and TXT · up to 25 MB per file.</p></div><a class="view-all" href="my-library.html">View my library <span>→</span></a></div>
+        <form id="document-upload-form" class="upload-form">
+          <div class="upload-fields">
+            <label>Document title<input name="title" required maxlength="160" placeholder="Research paper title"></label>
+            <label>Author(s)<input name="author" maxlength="120" placeholder="Author name(s)"></label>
+            <label>Year<input name="year" type="number" min="1900" max="2100" placeholder="2026"></label>
+            <label>Category<select name="category"><option>General</option><option>Artificial intelligence</option><option>Education</option><option>Information systems</option><option>Research methods</option><option>Capstone project</option></select></label>
+            <label class="upload-abstract">Abstract or notes<textarea name="abstract" rows="4" maxlength="1200" placeholder="Add a short summary to make this document easier to find."></textarea></label>
+            <label class="upload-file">Document file <span>PDF, DOCX, or TXT · up to 25 MB</span><input name="file" type="file" accept=".pdf,.docx,.txt,application/pdf,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required></label>
+          </div>
+          <div class="upload-actions"><p>File contents are saved in this browser and are not uploaded or shared between devices.</p><button type="submit">Add to my library <span>↑</span></button></div>
+          <div class="upload-status" id="upload-status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <footer class="footer"><span>RESEARCH HUB <i>·</i> ADD RESEARCH</span><span>Files are stored in your browser</span></footer>
+    </main>
+
+    <button class="chat-launcher" id="chat-launcher" aria-label="Open research helper"><img src="/assets/ai-chatbot-logo.png" alt=""></button>
+    <section class="chat-panel" id="chat-panel" aria-label="Research helper" hidden>
+      <div class="chat-header"><div class="chat-avatar"><img src="/assets/ai-chatbot-logo.png" alt=""></div><div><strong>Website help</strong><span><i id="ai-status-dot"></i><span id="ai-status-label">Checking Groq AI…</span></span></div><button id="chat-close" aria-label="Close website help">×</button></div>
+      <div class="chat-disclaimer">AI PRIVACY <span>Your question and up to 4 matched excerpts are sent to Groq. Avoid sensitive data.</span></div>
+      <div class="chat-messages" id="chat-messages" aria-live="polite"><div class="message assistant-message">I can help you use this Research Hub website. Ask about signing in, searching, your library, uploads, profile, or dashboards.</div></div>
+      <form class="chat-form" id="chat-form"><label class="visually-hidden" for="chat-input">Ask how to use Research Hub</label><input id="chat-input" placeholder="Ask how to use this website..." autocomplete="off"><button type="submit" aria-label="Ask about using this website">⌕</button></form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="auth-client.js"></script>
+  <script src="scriptss.js"></script>
+</body>
+</html>

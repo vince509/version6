@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17161f">
+  <meta name="description" content="Share and discover approved academic research at STI College Alaminos.">
+  <title>Shared research · STI College Alaminos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="version1.html" aria-label="Research Hub home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-copy"><strong>research<span>hub</span></strong><small>STI COLLEGE ALAMINOS</small></span></a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link" href="version1.html"><span class="nav-icon">⌂</span>Discover</a>
+        <a class="nav-link library-nav-button" href="add-research.html"><span class="nav-icon">＋</span>Add research</a>
+        <a class="nav-link" href="my-library.html"><span class="nav-icon">▣</span>My library</a>
+        <a class="nav-link active" href="shared-research.html" aria-current="page"><span class="nav-icon">⇄</span>Shared research</a>
+        <a class="nav-link" href="about.html"><span class="nav-icon">✳</span>About the project</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note"><span class="note-icon">✦</span><strong>Research, shared.</strong><p>Discover work approved by the academic community.</p><a href="about.html">Learn about the project <span>↗</span></a></div>
+      <a class="profile" href="/profile" aria-label="Open your profile"><div class="avatar">S</div><div><strong>Research Hub</strong><small>Member</small></div><span class="profile-more">···</span></a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong>Shared research</strong></div>
+        <form class="global-search" action="library.html" method="get" role="search"><label class="visually-hidden" for="global-search-input">Search all research</label><input id="global-search-input" type="search" name="q" placeholder="Search research..." autocomplete="off"><button type="submit" aria-label="Search">⌕</button></form>
+        <div class="top-actions"><span class="preview-label"><i></i> ACADEMIC COMMUNITY</span></div>
+      </header>
+
+      <section class="inner-page-heading">
+        <span class="section-kicker">STI COLLEGE ALAMINOS · ACADEMIC RESEARCH</span>
+        <h1>Shared research</h1>
+        <p>Contribute academic work for review, then explore submissions approved for the ResearchHub community.</p>
+      </section>
+
+      <section class="shared-panel" aria-labelledby="submission-heading">
+        <div class="shared-section-heading"><div><span class="section-kicker">CONTRIBUTE</span><h2 id="submission-heading">Submit research for review</h2><p>Submissions are private to you and authorized reviewers until approved.</p></div></div>
+        <form id="shared-upload-form" class="shared-upload-form" enctype="multipart/form-data">
+          <label>Research title <input name="title" required maxlength="160" placeholder="Enter the title"></label>
+          <div class="shared-form-row">
+            <label>Author(s) <input name="author" maxlength="120" placeholder="Optional"></label>
+            <label>Publication year <input name="year" type="number" min="1900" max="2100" placeholder="Optional"></label>
+            <label>Category
+              <select name="category">
+                <option>Capstone Project</option><option>Thesis</option><option>Journal Article</option>
+                <option>Conference Paper</option><option>Technical Report</option><option>Other</option>
+              </select>
+            </label>
+          </div>
+          <label>Abstract or summary <textarea name="abstract" rows="4" maxlength="3000" placeholder="Briefly describe the research (optional)."></textarea></label>
+          <label class="shared-file-field">Research file <input name="file" type="file" accept=".pdf,.doc,.docx,.txt" required><small>PDF, DOC, DOCX, or TXT · maximum 25 MB</small></label>
+          <div class="shared-submit-row"><button type="submit" class="shared-primary-button">Submit for review</button><p id="shared-submit-status" class="shared-status" role="status" aria-live="polite"></p></div>
+        </form>
+      </section>
+
+      <section class="shared-panel" aria-labelledby="approved-heading">
+        <div class="shared-section-heading shared-results-heading">
+          <div><span class="section-kicker">COMMUNITY COLLECTION</span><h2 id="approved-heading">Approved research</h2><p>Browse documents that have completed academic review.</p></div>
+          <label class="shared-search-label">Filter approved research <input id="shared-search" type="search" placeholder="Search titles, authors, topics..." autocomplete="off"></label>
+        </div>
+        <p id="shared-approved-status" class="shared-status" role="status" aria-live="polite"></p>
+        <div id="shared-approved-list" class="shared-card-list"></div>
+        <p id="shared-approved-empty" class="shared-empty" hidden>No approved research matches your search yet.</p>
+      </section>
+
+      <section class="shared-panel" aria-labelledby="mine-heading">
+        <div class="shared-section-heading"><div><span class="section-kicker">YOUR CONTRIBUTIONS</span><h2 id="mine-heading">My submissions</h2><p>Track the review status of research you have submitted.</p></div></div>
+        <div id="shared-mine-list" class="shared-card-list"></div>
+        <p id="shared-mine-empty" class="shared-empty" hidden>You have not submitted any research yet.</p>
+      </section>
+
+      <section class="shared-panel" id="shared-review-panel" aria-labelledby="review-heading" hidden>
+        <div class="shared-section-heading"><div><span class="section-kicker">FACULTY REVIEW</span><h2 id="review-heading">Submissions awaiting review</h2><p>Reviewers can approve or reject pending community submissions.</p></div></div>
+        <div id="shared-review-list" class="shared-card-list"></div>
+        <p id="shared-review-empty" class="shared-empty" hidden>There are no submissions awaiting review.</p>
+      </section>
+
+      <footer class="footer"><span>STI College Alaminos</span><span>ResearchHub · Shared academic repository</span></footer>
+    </main>
+    <input id="csrf-token" type="hidden" value="">
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="scriptss.js" defer></script>
+  <script src="shared-research.bundle.js" defer></script>
+</body>
+</html>

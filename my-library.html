@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17161f">
+  <meta name="description" content="Your personal collection of saved research files.">
+  <title>My Library — STI College Alaminos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="version1.html" aria-label="Research Hub home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-copy"><strong>research<span>hub</span></strong><small>STI COLLEGE ALAMINOS</small></span></a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link" href="version1.html"><span class="nav-icon">⌂</span>Discover</a>
+        <a class="nav-link library-nav-button" href="add-research.html"><span class="nav-icon">＋</span>Add research</a>
+        <a class="nav-link active" href="my-library.html" aria-current="page"><span class="nav-icon">▣</span>My library</a>
+        <a class="nav-link" href="shared-research.html"><span class="nav-icon">⇄</span>Shared research</a>
+        <a class="nav-link" href="about.html"><span class="nav-icon">✳</span>About the project</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note"><span class="note-icon">✦</span><strong>Your research, organized.</strong><p>Your uploaded files are saved in your personal browser library.</p><a href="add-research.html">Add a document <span>↗</span></a></div>
+      <a class="profile" href="/profile" aria-label="Open your profile"><div class="avatar">S</div><div><strong>Research Hub</strong><small>Member</small></div><span class="profile-more">···</span></a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong>My library</strong></div>
+        <form class="global-search" action="library.html" method="get" role="search"><label class="visually-hidden" for="global-search-input">Search all research</label><input id="global-search-input" type="search" name="q" placeholder="Search research..." autocomplete="off"><button type="submit" aria-label="Search">⌕</button></form>
+        <div class="top-actions"><span class="preview-label"><i></i> PERSONAL SPACE</span></div>
+      </header>
+
+      <section class="inner-page-heading">
+        <span class="section-kicker">YOUR PERSONAL SPACE</span>
+        <h1>My library</h1>
+        <p>Your uploaded research files, saved on this device and visible only in your signed-in account.</p>
+      </section>
+
+      <section class="search-panel library-search" aria-label="Search your personal library">
+        <div class="search-heading"><div><span class="search-symbol">⌕</span><strong>Find one of your documents</strong></div><span class="ai-tag">MY FILES</span></div>
+        <form id="search-form" class="search-form">
+          <label class="visually-hidden" for="search-input">Search your saved documents</label>
+          <input id="search-input" type="search" autocomplete="off" placeholder="Search title, author, category, or file name...">
+          <button type="submit"><span>⌕</span> Search</button>
+        </form>
+      </section>
+
+      <section class="library-section repository-manager personal-library" id="my-documents">
+        <div class="section-heading">
+          <div><span class="section-kicker">PRIVATE TO YOUR ACCOUNT</span><h2>Saved documents <span class="saved-count" id="saved-count">0</span></h2><p>Preview, download, or remove files you have uploaded.</p></div>
+          <a class="add-document-link" href="add-research.html">＋ Add research</a>
+        </div>
+        <div class="saved-documents" id="saved-documents"></div>
+        <div class="saved-empty" id="saved-empty"><span>▤</span><strong>Your library is empty</strong><p>Upload a PDF, DOCX, or TXT file to keep it here.</p><a class="file-action" href="add-research.html">Add your first research file</a></div>
+      </section>
+
+      <footer class="footer"><span>RESEARCH HUB <i>·</i> MY LIBRARY</span><span>Your uploaded files stay in this browser</span></footer>
+    </main>
+
+    <button class="chat-launcher" id="chat-launcher" aria-label="Open research helper"><img src="/assets/ai-chatbot-logo.png" alt=""></button>
+    <section class="chat-panel" id="chat-panel" aria-label="Research helper" hidden>
+      <div class="chat-header"><div class="chat-avatar"><img src="/assets/ai-chatbot-logo.png" alt=""></div><div><strong>Website help</strong><span><i id="ai-status-dot"></i><span id="ai-status-label">Checking Groq AI…</span></span></div><button id="chat-close" aria-label="Close website help">×</button></div>
+      <div class="chat-disclaimer">AI PRIVACY <span>Your question and up to 4 matched excerpts are sent to Groq. Avoid sensitive data.</span></div>
+      <div class="chat-messages" id="chat-messages" aria-live="polite"><div class="message assistant-message">I can help you use this Research Hub website. Ask about signing in, searching, your library, uploads, profile, or dashboards.</div></div>
+      <form class="chat-form" id="chat-form"><label class="visually-hidden" for="chat-input">Ask how to use Research Hub</label><input id="chat-input" placeholder="Ask how to use this website..." autocomplete="off"><button type="submit" aria-label="Ask about using this website">⌕</button></form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="auth-client.js"></script>
+  <script src="scriptss.js"></script>
+</body>
+</html>

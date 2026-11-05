@@ -1,0 +1,19 @@
+{
+    "name":  "sti-research-hub",
+    "version":  "1.0.0",
+    "private":  true,
+    "description":  "Role-based academic research portal for STI College Alaminos",
+    "scripts":  {
+                    "build":  "esbuild shared-research.js --bundle --platform=browser --outfile=shared-research.bundle.js"
+                },
+    "engines":  {
+                    "node":  "24.x"
+                },
+    "dependencies":  {
+                         "@vercel/blob":  "^2.4.0",
+                         "mongodb":  "^7.8.0"
+                     },
+    "devDependencies":  {
+                            "esbuild":  "^0.25.0"
+                        }
+}
